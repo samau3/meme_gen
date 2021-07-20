@@ -1,5 +1,5 @@
 const form = document.querySelector('form')
-const memeList = document.querySelector('#memes')
+const memeSection = document.querySelector('#memes')
 
 form.addEventListener('submit', function (e) {
     e.preventDefault();
@@ -14,7 +14,23 @@ form.addEventListener('submit', function (e) {
 })
 
 const addMeme = (image, top, bottom) => {
-    const newLi = document.createElement('li');
-    newLi.innerText = (`${image}, ${top}, ${bottom}`)
-    memeList.appendChild(newLi)
+
+    let newMeme = document.createElement('div')
+    newMeme.classList.add('meme')
+
+    let newImage = document.createElement('img')
+    let topText = document.createElement('p')
+    let bottomText = document.createElement('p')
+    topText.classList.add('topText')
+    bottomText.classList.add('bottomText')
+
+    newImage.src = image
+    topText.innerText = top
+    bottomText.innerText = bottom
+
+    newMeme.appendChild(newImage)
+    newMeme.appendChild(topText)
+    newMeme.appendChild(bottomText)
+    memeSection.appendChild(newMeme)
+
 }
