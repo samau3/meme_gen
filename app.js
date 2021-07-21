@@ -22,17 +22,24 @@ const addMeme = (image, top, bottom) => {
     let newImage = document.createElement('img')
     let topText = document.createElement('p')
     let bottomText = document.createElement('p')
-    topText.classList.add('topText')
-    bottomText.classList.add('bottomText')
+
+    let topDiv = document.createElement('div')
+    let bottomDiv = document.createElement('div')
+
+    topDiv.appendChild(topText)
+    bottomDiv.appendChild(bottomText)
+
+    topDiv.classList.add('topText')
+    bottomDiv.classList.add('bottomText')
+
 
     newImage.src = image
     topText.innerText = top
     bottomText.innerText = bottom
 
-
     newMeme.appendChild(newImage)
-    newMeme.appendChild(topText)
-    newMeme.appendChild(bottomText)
+    newMeme.appendChild(topDiv)
+    newMeme.appendChild(bottomDiv)
     memeSection.appendChild(newMeme)
 
     newMeme.addEventListener("click", function (e) {
