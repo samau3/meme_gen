@@ -1,3 +1,35 @@
+p {
+    margin: 0;
+}
+
+header {
+    text-align: center;
+}
+
+button {
+    margin: 1%;
+    border-radius: 4px;
+}
+
+label {
+    display: inline-block;
+    width: 140px;
+    text-align: left;
+}
+
+.form {
+    padding: 1%;
+    background-color: #D3E3F2;
+}
+
+.form input{
+    display: inline-block;
+    width: 90%;
+    margin: 2px;
+    padding: 1px;
+
+}
+
 .meme {
     display: inline-block;
     position: relative;
@@ -6,6 +38,7 @@
     font-size: 1.6em;
     text-transform: uppercase;
     margin: 5px;
+    filter: brightness(100%);
 }
 
 .meme img{
@@ -19,6 +52,8 @@
     left: 50%;
     transform: translate(-50%,0);
     margin-top: 5px;
+    text-align: center;
+    /* background-color: red; */
 }
 
 .bottomText {
@@ -27,8 +62,33 @@
     left: 50%;
     transform: translate(-50%,0);
     margin-bottom: 5px;
+    text-align: center;
+    /* background-color: green; */
 }
 
-p {
-    margin: 0;
+.deleteInfo {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%,0);
+    margin-bottom: 5px;
+    opacity: 90%;
+    font-size: 2.5em;
+    text-align: center;
+    visibility: hidden;
+}
+
+.meme:not(.deleteInfo):hover {
+    filter: brightness(50%);
+
+}
+
+.meme:hover .deleteInfo {
+    visibility: visible;
+}
+
+#memes {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
