@@ -1,5 +1,6 @@
 const form = document.querySelector('form')
 const memeSection = document.querySelector('#memes')
+// const memes = document.querySelectorAll('.memes')
 
 form.addEventListener('submit', function (e) {
     e.preventDefault();
@@ -28,9 +29,13 @@ const addMeme = (image, top, bottom) => {
     topText.innerText = top
     bottomText.innerText = bottom
 
+
     newMeme.appendChild(newImage)
     newMeme.appendChild(topText)
     newMeme.appendChild(bottomText)
     memeSection.appendChild(newMeme)
 
+    newMeme.addEventListener("click", function (e) {
+        newMeme.remove()
+    })
 }
